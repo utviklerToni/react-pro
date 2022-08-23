@@ -21,6 +21,11 @@ const Header = () => {
 							In process
 						</Link>
 					</div>
+					<div>
+						<Link to='/add-user' className='nav-links'>
+							Add user
+						</Link>
+					</div>
 				</div>
 			</nav>
 		</div>
