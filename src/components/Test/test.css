@@ -1,0 +1,13 @@
+.form-container {
+   width: 360px;
+   max-width: 90vw;
+   margin: auto;
+}
+
+.d-flex {
+   display: flex;
+}
+
+.flex-dir {
+   flex-direction: column;
+}
