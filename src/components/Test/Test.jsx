@@ -1,3 +1,6 @@
+// using refs for input form,
+// NOTE: refs will make the inputs uncontrolled unlike state wise
+
 import React, { useRef, useState } from 'react';
 
 import Card from '../UI/Card';
