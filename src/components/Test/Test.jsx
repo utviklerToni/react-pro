@@ -5,50 +5,80 @@ import Card from '../UI/Card';
 import './test.css';
 import classes from '../Users/AddUser.module.css';
 import Button from '../UI/Button';
+import ErrorModal from '../UI/ErrorModal';
 
-const Test = (props) => {
-   console.log(props);
-   const [error, setError] = useState();
-   const nameInputRef = useRef();
-   const msgInputRef = useRef();
+const Test = () => {
+	const [msg, setMsgList] = useState([]);
 
-   const addHandler = (event) => {
-      event.preventDefault();
-      const enteredName = nameInputRef.current.value;
-      const enteredMsg = msgInputRef.current.value;
+	const onAddMsg = (name, msg) => {
+		setMsgList((prevMsg) => {
+			return [...prevMsg, { name, msg, id: Math.random().toString() }];
+		});
+	};
 
-      if (enteredName.trim().length === 0 || enteredMsg.trim().length === 0) {
-         setError({
-            title: 'invalid input',
-            message: 'please enter a valid name and age',
-         });
-         return;
-      }
+	// console.log(props);
+	const [error, setError] = useState();
+	const nameInputRef = useRef();
+	const msgInputRef = useRef();
 
-      // console.log(enteredName, enteredMsg);
-      props.onTest(enteredName, enteredMsg);
-   };
+	const addHandler = (event) => {
+		event.preventDefault();
+		const enteredName = nameInputRef.current.value;
+		const enteredMsg = msgInputRef.current.value;
 
-   return (
-      <div className=''>
-         <Card className={classes.input}>
-            <form
-               onSubmit={addHandler}
-               className='form-container d-flex flex-dir'
-            >
-               <h1>Testing useRefs</h1>
+		if (enteredName.trim().length === 0 || enteredMsg.trim().length === 0) {
+			setError({
+				title: 'invalid input',
+				message: 'please enter a valid name and age',
+			});
+			return;
+		}
 
-               <label>Enter name</label>
-               <input type='text' ref={nameInputRef} />
+		// console.log(enteredName, enteredMsg);
+		onAddMsg(enteredName, enteredMsg);
+	};
 
-               <label>Enter Message</label>
-               <input type='text' ref={msgInputRef} />
+	const errorHandler = () => {
+		setError(null);
+	};
 
-               <Button type='submit'>send message</Button>
-            </form>
-         </Card>
-      </div>
-   );
+	return (
+		<div className=''>
+			{error && (
+				<ErrorModal
+					title={error.title}
+					message={error.message}
+					onConfirm={errorHandler}
+				/>
+			)}
+			<Card className={classes.input}>
+				<form
+					onSubmit={addHandler}
+					className='form-container d-flex flex-dir'
+				>
+					<h1>Testing useRefs</h1>
+
+					<label>Enter name</label>
+					<input type='text' ref={nameInputRef} />
+
+					<label>Enter Message</label>
+					<input type='text' ref={msgInputRef} />
+
+					<Button type='submit'>send message</Button>
+				</form>
+
+				<ul className='form-container d-flex flex-dir'>
+					{msg.map((single) => (
+						<li key={single.id}>
+							<h3>
+								{single.name}, {single.msg}
+							</h3>
+						</li>
+					))}
+				</ul>
+			</Card>
+		</div>
+	);
 };
 
 export default Test;
