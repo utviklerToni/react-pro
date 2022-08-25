@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './headers.css';
+
 const Header = () => {
    return (
       <div>
@@ -8,28 +10,24 @@ const Header = () => {
             <div className='nav container'>
                <div>
                   <Link to='/' className='nav-links'>
-                     Home
+                     utviklerToni
                   </Link>
                </div>
-               <div>
-                  <Link to='/selected' className='nav-links'>
-                     Selected
-                  </Link>
-               </div>
-               <div>
-                  <Link to='/in-process' className='nav-links'>
-                     In process
-                  </Link>
-               </div>
-               <div>
-                  <Link to='/add-user' className='nav-links'>
-                     Add user
-                  </Link>
-               </div>
-               <div>
-                  <Link to='/test' className='nav-links'>
-                     Test User
-                  </Link>
+
+               <div className='nav-links drop-down'>
+                  <div className='dropdown'>
+                     <button className='dropbtn'>
+                        Projects
+                        <i className='fa fa-caret-down'></i>
+                     </button>
+                     <div className='dropdown-content'>
+                        <Link to={`/`}>User Overview</Link>
+                        <Link to={`/expense-tracker`}>Expense Tracker</Link>
+                        <Link to={`/add-user`}>Add User</Link>
+                        <Link to={`/todo-list`}>Todo List</Link>
+                        <Link to={`/test`}>Test</Link>
+                     </div>
+                  </div>
                </div>
             </div>
          </nav>

@@ -9,6 +9,7 @@ import Selected from './pages/Selected';
 import InProcess from './pages/InProcess';
 import AddUserMain from './components/Users/AddUserMain';
 import Test from './components/Test/Test';
+import ExpenseTracker from './pages/ExpenseTracker/pages/ExpenseTracker';
 
 function App() {
    return (
@@ -19,6 +20,8 @@ function App() {
             <Route path='/selected' element={<Selected />} />
             <Route path='/in-process' element={<InProcess />} />
             <Route path='/add-user' element={<AddUserMain />} />
+            <Route path='/expense-tracker' element={<ExpenseTracker />} />
+
             <Route path='/test' element={<Test />} />
          </Routes>
          {/* <Footer /> */}

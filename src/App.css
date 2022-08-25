@@ -1,39 +1,39 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 .container {
-	max-width: 81vw;
-	margin: auto;
+   max-width: 81vw;
+   margin: auto;
 }
 
 .nav-color {
-	background-color: cadetblue;
+   background-color: cadetblue;
 }
 
 .nav {
-	display: flex;
-	gap: 3rem;
-	align-items: center;
-	height: 100px;
-	background-color: cadetblue;
+   display: flex;
+   justify-content: space-around;
+   gap: 3rem;
+   align-items: center;
+   height: 100px;
+   background-color: cadetblue;
 }
 
 .nav-links {
-	text-decoration: none;
-	font-size: 1.5rem;
-	text-transform: uppercase;
-	border-radius: 9px;
-	transition: all 0.3s ease-in-out;
+   text-decoration: none;
+   font-size: 1.5rem;
+   border-radius: 9px;
+   transition: all 0.3s ease-in-out;
 }
 
 .nav-links:visited,
 .nav-links:active {
-	color: white;
+   color: white;
 }
 
 .nav-links:hover {
-	color: yellow;
+   color: yellow;
 }
