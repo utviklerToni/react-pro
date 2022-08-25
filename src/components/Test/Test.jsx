@@ -45,6 +45,25 @@ const Test = () => {
 		setError(null);
 	};
 
+	const h = 'Can you change me?';
+	const p = 'Can you turn me to header?';
+
+	const [heading, setHeading] = useState(h);
+	const [para, setPara] = useState(p);
+
+	const changeHeading = () => {
+		setHeading('I have mastered state.');
+	};
+
+	const changePara = () => {
+		setPara('I am heading now.');
+	};
+
+	const resetHeading = () => {
+		setHeading(h);
+		setPara(p);
+	};
+
 	return (
 		<div className=''>
 			{error && (
@@ -80,6 +99,24 @@ const Test = () => {
 					))}
 				</ul>
 			</Card>
+
+			{/* state test */}
+
+			<div className='form-container'>
+				<p>Learning state</p>
+				<br />
+				<h3>{heading}</h3>
+
+				<div className='d-flex flex-dir'>
+					<Button onClick={changeHeading}>Try it!</Button>
+					<br />
+
+					<h3>{para}</h3>
+					<Button onClick={changePara}>Turn it into a para</Button>
+					<br />
+					<Button onClick={resetHeading}>Reset all</Button>
+				</div>
+			</div>
 		</div>
 	);
 };
