@@ -10,23 +10,25 @@ import InProcess from './pages/InProcess';
 import AddUserMain from './components/Users/AddUserMain';
 import Test from './components/Test/Test';
 import ExpenseTracker from './pages/ExpenseTracker/pages/ExpenseTracker';
+import SimpleInput from './components/FormHandling/SimpleInput';
 
 function App() {
-   return (
-      <main>
-         <Header />
-         <Routes>
-            <Route path='/' element={<UsersList />} />
-            <Route path='/selected' element={<Selected />} />
-            <Route path='/in-process' element={<InProcess />} />
-            <Route path='/add-user' element={<AddUserMain />} />
-            <Route path='/expense-tracker' element={<ExpenseTracker />} />
+	return (
+		<main>
+			<Header />
+			<Routes>
+				<Route path='/' element={<UsersList />} />
+				<Route path='/selected' element={<Selected />} />
+				<Route path='/in-process' element={<InProcess />} />
+				<Route path='/add-user' element={<AddUserMain />} />
+				<Route path='/expense-tracker' element={<ExpenseTracker />} />
+				<Route path='/form-handling' element={<SimpleInput />} />
 
-            <Route path='/test' element={<Test />} />
-         </Routes>
-         {/* <Footer /> */}
-      </main>
-   );
+				<Route path='/test' element={<Test />} />
+			</Routes>
+			{/* <Footer /> */}
+		</main>
+	);
 }
 
 export default App;
