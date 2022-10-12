@@ -10,25 +10,34 @@ import InProcess from './pages/UserOverview/InProcess';
 import AddUserMain from './components/Users/AddUserMain';
 import UseRefs from './components/UseRefs/UserRefs';
 import ExpenseTracker from './pages/ExpenseTracker/pages/ExpenseTracker';
+import LoginApp from './pages/Login/LoginApp';
+import AuthContext from './components/store/authContext';
+import ReduxCounter from './components/Redux/ReduxCounter';
+import TodoList from './components/TodoList/TodoList';
 import SimpleInput from './components/FormHandling/SimpleInput';
 
 function App() {
-	return (
-		<main>
-			<Header />
-			<Routes>
-				<Route path='/' element={<UsersList />} />
-				<Route path='/selected' element={<Selected />} />
-				<Route path='/in-process' element={<InProcess />} />
-				<Route path='/add-user' element={<AddUserMain />} />
-				<Route path='/expense-tracker' element={<ExpenseTracker />} />
-				<Route path='/form-handling' element={<SimpleInput />} />
-
-				<Route path='/test' element={<Test />} />
-			</Routes>
-			{/* <Footer /> */}
-		</main>
-	);
+   return (
+      <AuthContext.Provider value={'fake value'}>
+         <main>
+            <Header />
+            <Routes>
+               <Route path='/' element={<UsersList />} />
+               <Route path='/selected' element={<Selected />} />
+               <Route path='/inProcess' element={<InProcess />} />
+               <Route path='/todoList' element={<TodoList />} />
+               <Route path='/addUser' element={<AddUserMain />} />
+               <Route path='/expenseTracker' element={<ExpenseTracker />} />
+               <Route path='/addMessage' element={<UseRefs />} />
+               <Route path='/loginApp' element={<LoginApp />} />
+               <Route path='/reduxCounter' element={<ReduxCounter />} />
+               <Route path='/simpleinput' element={<SimpleInput />} />
+			   
+            </Routes>
+            {/* <Footer /> */}
+         </main>
+      </AuthContext.Provider>
+   );
 }
 
 export default App;

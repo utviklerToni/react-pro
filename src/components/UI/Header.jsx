@@ -29,6 +29,8 @@ const Header = (props) => {
                         <Link to={`/addMessage`}>Add Context</Link>
                         <Link to={`/loginApp`}>Login via Context</Link>
                         <Link to={`/reduxCounter`}>Redux Counter</Link>
+                        <Link to={`/simpleinput`}>Simple Input</Link>
+
                      </div>
                   </div>
                </div>
