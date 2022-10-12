@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './headers.css';
 
-const Header = () => {
+const Header = (props) => {
    return (
       <div>
          <nav className='nav-color'>
@@ -20,15 +20,19 @@ const Header = () => {
                         Projects
                         <i className='fa fa-caret-down'></i>
                      </button>
+
                      <div className='dropdown-content'>
                         <Link to={`/`}>User Overview</Link>
-                        <Link to={`/expense-tracker`}>Expense Tracker</Link>
-                        <Link to={`/add-user`}>Add User</Link>
-                        <Link to={`/todo-list`}>Todo List</Link>
-                        <Link to={`/test`}>Test</Link>
+                        <Link to={`/expenseTracker`}>Expense Tracker</Link>
+                        <Link to={`/addUser`}>Add User</Link>
+                        <Link to={`/todoList`}>Todo List</Link>
+                        <Link to={`/addMessage`}>Add Context</Link>
+                        <Link to={`/loginApp`}>Login via Context</Link>
+                        <Link to={`/reduxCounter`}>Redux Counter</Link>
                      </div>
                   </div>
                </div>
+               {props.isLoggedIn && <div>Logout</div>}
             </div>
          </nav>
       </div>

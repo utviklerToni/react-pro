@@ -4,6 +4,11 @@
    box-sizing: border-box;
 }
 
+.space {
+   margin: 18px;
+   padding: 9px 18px;
+}
+
 .container {
    max-width: 81vw;
    margin: auto;
